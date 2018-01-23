@@ -17,3 +17,17 @@ assembly
 clean
 reload
 clean
+assembly
+reload
+assembly
+clean
+assembly
+reload
+assembly
+run
+assembly
+run
+clean
+reload
+assembly
+clean

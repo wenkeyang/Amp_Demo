@@ -4,13 +4,14 @@ package au.com.amp.etl
 import au.com.amp.etl.sql._
 import org.apache.logging.log4j.Level
 import org.apache.spark.sql.SparkSession
-import org.apache.logging.log4j.scala.Logging
+import au.com.amp.etl.util.LoggingSupport
 
 /**
   * Created by ywksu on 1/23/2018.
   */
-object Main extends Logging {
+object Main extends LoggingSupport {
   def main(args: Array[String]): Unit = {
+
     val spark = SparkSession
       .builder()
       .enableHiveSupport()
@@ -37,10 +38,10 @@ object Main extends Logging {
       val bcc_c = bcc.count()
       val btc_c = btc.count()
       //this info could be use for testing purpose
-      logger.info("Loading Finished with bcc:" + bcc_c + " btc:" + btc_c)
+      log.info("Loading Finished with bcc:" + bcc_c + " btc:" + btc_c)
 
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error("Frank: " + e.getMessage)
     }
 
   }

@@ -1,6 +1,6 @@
 name := "Amp_Demo"
 
-version := "1.0"
+version := "1.2"
 
 scalaVersion := "2.11.8"
 val sparkVersion = "2.2.1"

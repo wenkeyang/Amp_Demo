@@ -8,7 +8,7 @@ import org.apache.logging.log4j.scala.Logging
 /**
   * Created by ywksu on 1/23/2018.
   */
-class Tools extends Logging {
+class Tools extends LoggingSupport {
   def loadXML(path: String): scala.xml.Elem = {
     scala.xml.XML.loadFile(path)
   }
@@ -28,7 +28,7 @@ class Tools extends Logging {
       spark.sql(sql).write.mode("append").saveAsTable(table_name)
       spark.sql("refresh table " + table_name)
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error(e.getMessage)
     }
   }
 
@@ -37,7 +37,7 @@ class Tools extends Logging {
       spark.sql("drop table if exists " + table_name)
       spark.sql(sql).write.saveAsTable(table_name)
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error(e.getMessage)
     }
   }
 
@@ -47,7 +47,7 @@ class Tools extends Logging {
         .mode("append").saveAsTable(table_name)
       spark.sql("refresh table " + table_name)
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error(e.getMessage)
     }
   }
 
@@ -56,7 +56,7 @@ class Tools extends Logging {
       spark.sql("drop table if exists " + table_name)
       spark.sql(sql).write.partitionBy(partition).saveAsTable(table_name)
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error(e.getMessage)
     }
   }
 
@@ -65,7 +65,7 @@ class Tools extends Logging {
     try {
       format.parse(inputSt)
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error(e.getMessage)
         format.parse("0000-00-00")
     }
   }
@@ -75,7 +75,7 @@ class Tools extends Logging {
     try {
       format.format(inputDt)
     } catch {
-      case e: Exception => logger.error(e.getMessage)
+      case e: Exception => log.error(e.getMessage)
         format.format("0000-00-00")
     }
   }
