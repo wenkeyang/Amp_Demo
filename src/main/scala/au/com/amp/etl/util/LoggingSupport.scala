@@ -1,4 +1,4 @@
-package au.com.amp.etl.au.com.amp.etl.util
+package au.com.amp.etl.util
 
 /**
   * Created by ywksu on 1/24/2018.

@@ -1,9 +1,8 @@
-package au.com.amp.etl.au.com.amp.etl.util
+package au.com.amp.etl.util
+
+import org.apache.spark.sql.SparkSession
 
 import scala.io.Source
-import org.apache.logging.log4j.Level
-import org.apache.spark.sql.SparkSession
-import org.apache.logging.log4j.scala.Logging
 
 /**
   * Created by ywksu on 1/23/2018.
