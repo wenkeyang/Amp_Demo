@@ -31,3 +31,5 @@ clean
 reload
 assembly
 clean
+assembly
+clean

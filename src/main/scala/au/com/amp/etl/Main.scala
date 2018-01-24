@@ -23,6 +23,7 @@ object Main extends LoggingSupport {
     try {
       val bcc = spark.read.option("header", "true").option("inferSchema", "true").csv("/tmp/bcc.csv")
       val btc = spark.read.option("header", "true").option("inferSchema", "true").csv("/tmp/btc.csv")
+
       //temp view will disappear after sessino finished
       bcc.createOrReplaceTempView("bcc")
       btc.createOrReplaceTempView("btc")

@@ -4,7 +4,7 @@
 		module="amp_demo-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20180124024014"
+		publication="20180124174746"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
