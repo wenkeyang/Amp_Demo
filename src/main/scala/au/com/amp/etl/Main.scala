@@ -24,6 +24,13 @@ object Main extends LoggingSupport {
       val bcc = spark.read.option("header", "true").option("inferSchema", "true").csv("/tmp/bcc.csv")
       val btc = spark.read.option("header", "true").option("inferSchema", "true").csv("/tmp/btc.csv")
 
+      //use to deal with broken file or possible broken file
+      //the default can be configured via spark.sql.columnNameOfCorruptRecord
+      spark.read.option("mode","PERMISSIVE").option("columnNameOfCorruptRecord","_corrupt_record").json("/path/corrput/").show()
+
+      //use for drop the corrupt Records
+      spark.read.option("mode","DROPMALFORMED").json("/path/corrupt").show()
+
       //temp view will disappear after sessino finished
       bcc.createOrReplaceTempView("bcc")
       btc.createOrReplaceTempView("btc")
