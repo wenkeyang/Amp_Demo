@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: net.minidev:json-smart:1.1.1:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/net/minidev/json-smart/1.1.1/json-smart-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

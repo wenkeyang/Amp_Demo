@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(D:\Source_code\Amp_Demo\src\test\resources\data,D:\Source_code\Amp_Demo\target\scala-2.11\test-classes\data)[0m
+[0m[[0mdebug[0m] [0m	(D:\Source_code\Amp_Demo\src\test\resources\log4j.properties,D:\Source_code\Amp_Demo\target\scala-2.11\test-classes\log4j.properties)[0m
+[0m[[0mdebug[0m] [0m	(D:\Source_code\Amp_Demo\src\test\resources\data\test,D:\Source_code\Amp_Demo\target\scala-2.11\test-classes\data\test)[0m

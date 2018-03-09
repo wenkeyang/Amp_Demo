@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="default" module="amp_demo_2.11" revision="1.2">
+    <description></description>
+  </info>
+  <configurations>
+    <conf name="plugin" visibility="public" description=""/>
+    <conf name="pom" visibility="public" description=""/>
+    <conf extends="runtime" name="test" visibility="public" description=""/>
+    <conf name="provided" visibility="public" description=""/>
+    <conf 
+    extends="compile,optional,provided" name="compile-internal" visibility="public" description="">
+</conf>
+    <conf name="docs" visibility="public" description=""/>
+    <conf name="optional" visibility="public" description=""/>
+    <conf name="compile" visibility="public" description=""/>
+    <conf 
+    extends="test,optional,provided" name="test-internal" visibility="public" description="">
+</conf>
+    <conf name="scala-tool" visibility="public" description=""/>
+    <conf name="sources" visibility="public" description=""/>
+    <conf extends="compile" name="runtime" visibility="public" description=""/>
+    <conf 
+    extends="runtime,optional" name="runtime-internal" visibility="public" description="">
+</conf>
+  </configurations>
+  <publications>
+    <artifact 
+    e:classifier="javadoc" name="amp_demo_2.11" type="doc" ext="jar" conf="compile">
+</artifact>
+    <artifact name="amp_demo_2.11" type="pom" ext="pom" conf="pom"/>
+    <artifact 
+    e:classifier="sources" name="amp_demo_2.11" type="src" ext="jar" conf="compile">
+</artifact>
+    <artifact name="amp_demo_2.11" type="jar" ext="jar" conf="compile"/>
+  </publications>
+  <dependencies>
+    <dependency 
+    org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="scala-tool-&gt;default">
+</dependency>
+    <dependency 
+    org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="scala-tool-&gt;optional(default)">
+</dependency>
+    <dependency 
+    org="org.scala-lang" name="scala-library" rev="2.11.8" conf="scala-tool-&gt;default">
+</dependency>
+    <dependency 
+    org="org.scala-lang" name="scala-library" rev="2.11.8" conf="scala-tool-&gt;optional(default)">
+</dependency>
+    <dependency 
+    org="org.scala-lang" name="scala-library" rev="2.11.8" conf="compile-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.apache.spark" name="spark-core_2.11" rev="2.2.1" conf="provided-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.apache.spark" name="spark-sql_2.11" rev="2.2.1" conf="provided-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.apache.spark" name="spark-hive_2.11" rev="2.2.1" conf="provided-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="com.holdenkarau" name="spark-testing-base_2.11" rev="2.2.0_0.8.0" conf="test-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.scalatest" name="scalatest_2.11" rev="2.2.4" conf="test-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="net.jcazevedo" name="moultingyaml_2.11" rev="0.4.0" conf="compile-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="joda-time" name="joda-time" rev="2.9.4" conf="compile-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.joda" name="joda-convert" rev="1.8.1" conf="compile-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.apache.logging.log4j" name="log4j-api-scala_2.11" rev="11.0" conf="compile-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.apache.logging.log4j" name="log4j-api" rev="2.8.2" conf="compile-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="org.apache.logging.log4j" name="log4j-core" rev="2.8.2" conf="runtime-&gt;default(compile)">
+</dependency>
+    <dependency 
+    org="mysql" name="mysql-connector-java" rev="5.1.6" conf="compile-&gt;default(compile)">
+</dependency>
+  </dependencies>
+</ivy-module>

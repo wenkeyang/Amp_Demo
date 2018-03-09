@@ -4,8 +4,6 @@
       <root url="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/javolution/javolution/5.5.1/javolution-5.5.1.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/javolution/javolution/5.5.1/javolution-5.5.1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

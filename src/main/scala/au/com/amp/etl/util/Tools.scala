@@ -1,19 +1,31 @@
 package au.com.amp.etl.util
 
 import org.apache.spark.sql.SparkSession
+import scala.util.{Failure, Success, Try}
+import net.jcazevedo.moultingyaml._
 
-import scala.io.Source
+
 
 /**
   * Created by ywksu on 1/23/2018.
   */
-class Tools extends LoggingSupport {
+object Tools extends LoggingSupport {
+
+//  def parseConfig(spark: SparkSession, file: String): Option[Config] = {
+//    Try ({
+//      val source = spark.sparkContext.textFile(file).collect().mkString("\n")
+//      source.parseYaml.convertTo[Config]
+//    }) match {
+//      case Success(s) => Some(s)
+//      case Failure(f) => log.error("Failed to parse the config file: " + f); None
+//    }
+//  }
   def loadXML(path: String): scala.xml.Elem = {
     scala.xml.XML.loadFile(path)
   }
 
   def loadFile(path: String): String = {
-    val bufferedSource = Source.fromFile(path)
+    val bufferedSource = scala.io.Source.fromFile(path)
     var buffString = "";
     for (line <- bufferedSource.getLines) {
       buffString += line + "\n"
@@ -80,3 +92,4 @@ class Tools extends LoggingSupport {
   }
 
 }
+

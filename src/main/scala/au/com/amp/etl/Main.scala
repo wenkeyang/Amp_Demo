@@ -18,7 +18,6 @@ object Main extends LoggingSupport {
       .appName("Amp_Demo")
       .getOrCreate()
 
-    val fc = new Features
 
     try {
       val bcc = spark.read.option("header", "true").option("inferSchema", "true").csv("/tmp/bcc.csv")
@@ -26,10 +25,10 @@ object Main extends LoggingSupport {
 
       //use to deal with broken file or possible broken file
       //the default can be configured via spark.sql.columnNameOfCorruptRecord
-      spark.read.option("mode","PERMISSIVE").option("columnNameOfCorruptRecord","_corrupt_record").json("/path/corrput/").show()
+      spark.read.option("mode", "PERMISSIVE").option("columnNameOfCorruptRecord", "_corrupt_record").json("/path/corrput/").show()
 
       //use for drop the corrupt Records
-      spark.read.option("mode","DROPMALFORMED").json("/path/corrupt").show()
+      spark.read.option("mode", "DROPMALFORMED").json("/path/corrupt").show()
 
       //temp view will disappear after sessino finished
       bcc.createOrReplaceTempView("bcc")
@@ -39,7 +38,7 @@ object Main extends LoggingSupport {
         .write.saveAsTable("frank.check_ratio_function")
 
       //this is to show how API join works
-      val output = spark.sql(fc.sbcc).join(spark.sql(fc.sbtc), Seq("ts"), joinType = "inner")
+      val output = spark.sql(Features.sbcc).join(spark.sql(Features.sbtc), Seq("ts"), joinType = "inner")
       output.write.saveAsTable("frank.check_join_function")
 
 

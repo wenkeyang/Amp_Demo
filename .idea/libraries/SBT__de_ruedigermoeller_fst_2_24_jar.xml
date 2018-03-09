@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: de.ruedigermoeller:fst:2.24:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/de/ruedigermoeller/fst/2.24/fst-2.24.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

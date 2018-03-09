@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession
   * Created by ywksu on 1/24/2018.
   * This class used for create hadoop based db warehouse db_name, db_table, db_colum mapping
   */
-class Dbinfo extends LoggingSupport {
+object Dbinfo extends LoggingSupport {
 
   def dbinfoGen(spark: SparkSession): Unit = {
     val dbinfo = spark.sql("show databases").collect

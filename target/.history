@@ -1,35 +1,15 @@
-run
+test
+testOnly *Example
+testOnly *ExampleTest
+testOnly *TestScala
+testOnly *ExampleTest
+testOnly *.ExampleTest
 reload
-run
-reload
-run
-assembly
+testOnly *ExampleTest
+clear
+clean
+testOnly *ExampleTest
+testOnly ExampleTest
+testOnly *ExampleTest
 compile
-reload
-compile
-reload
-compile
-assembly
-clean
-assembly
-reload
-assembly
-clean
-reload
-clean
-assembly
-reload
-assembly
-clean
-assembly
-reload
-assembly
-run
-assembly
-run
-clean
-reload
-assembly
-clean
-assembly
-clean
+testOnly *ExampleTest
